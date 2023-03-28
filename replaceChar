@@ -1,0 +1,46 @@
+package basic;
+/*
+ * Replace a character at a specific index in a String in Java
+ * 
+*/
+import java.util.*;
+ public class javamain{
+	 public static void main(String[] args) {
+		 String str1 = "Techie Delight";
+	        char ch = '_';
+	        int pos = 6;
+	 //1. Using substring() method
+	        str1 = str1.substring(0, pos) + ch + str1.substring(pos + 1);
+	        System.out.println(str1); 
+	        
+      //2. Using StringBuilder
+	        String str2 = "Techie Delight";
+	        StringBuilder sb = new StringBuilder(str2);
+	         // replace character at the specified position
+	        sb.setCharAt(pos, ch);
+	        str2 = sb.toString();
+	 
+	        // print the modified string
+	        System.out.println(str2);
+	        
+	        //3. Using toCharArray() method
+	        String str3 = "Techie Delight";
+	        // convert the given string to a character array
+	        char[] chars = str3.toCharArray();
+	 
+	        // replace character at the specified position in a char array
+	        chars[pos] = ch;
+	 
+	        // convert the character array back into a string
+	        str3 = String.valueOf(chars);
+	 
+	        // print the modified string
+	        System.out.println(str3);
+	        //4. Using Reflection
+	 }
+}
+/*Output:
+ * Techie_Delight
+   Techie_Delight
+   Techie_Delight
+*/
