@@ -1,0 +1,35 @@
+package basic;
+/*
+ * Check the Character vowel or consonent
+ * 
+*/
+import java.util.*;
+ public class javamain{
+static String checkWord(char c) {
+	if(c=='a' || c=='e' || c=='i' || c=='o' || c=='u')
+		 return "vowel";
+	 else
+		 return "consonent"; 
+}
+	 public static void main(String[] args) {
+		 Scanner sc=new Scanner(System.in);
+		 System.out.println("Enter the character: ");
+		 char ch=sc.next().charAt(0);
+		 String cchar=Character.toString(ch);
+		
+		 if (Character.isDigit(ch)) {
+			    System.out.println(ch + " is a number.");
+			} else {
+				String status=checkWord(ch);
+				 System.out.print(status);
+			}
+		 }
+	
+}
+/*Output:
+ * Enter the character: 
+y
+consonent
+Palindrome
+
+*/
