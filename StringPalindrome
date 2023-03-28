@@ -1,0 +1,49 @@
+package basic;
+/*
+ * Check the String is Palindrome Or Not
+ * 
+*/
+import java.util.*;
+ public class javamain{
+	static String checkPalind(String str,int len) {
+		 String copy="";
+		    for(int i=len-1;i>=0;i--){
+		    	copy=copy+(str.charAt(i));
+		     }
+		     if(copy.equals(str))
+		      return "Palindrome";
+		      else
+		    	  return "No Palindrome";
+	 }
+	static String checkPalind(String str,int len,int half) {
+		int c=0;
+		for(int i=0;i<half;i++) {
+			if(str.charAt(i)==(str.charAt(len-i)))
+				c++;
+		}
+		if(c==half)
+		      return "Palindrome";
+		      else
+		    	  return "No Palindrome";
+	}
+	 public static void main(String[] args) {
+		 System.out.println("Enter the word");
+		  Scanner sc=new Scanner(System.in);
+		    String str=sc.nextLine();
+		    int len=str.length();
+		    // First Approch
+		    String status=checkPalind(str,len);
+		    System.out.println(status);
+		    //Second Approach
+		     status=checkPalind(str,len-1,len/2);
+		    System.out.println(status);
+	 }
+	
+}
+/*Output:
+ * Enter the word
+abcdcba
+Palindrome
+Palindrome
+
+*/
