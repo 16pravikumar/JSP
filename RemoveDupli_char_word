@@ -1,0 +1,38 @@
+package basic;
+/*Remove the duplicate character and world 
+*/
+import java.util.*;
+ public class javamain{
+	 public static void main(String[] args)   
+	 {  
+		 //Remove duplicate character
+		 StringBuilder newstr=new StringBuilder();
+		 String str="I AM AT AMSTERDAM";
+	for(int i=0;i<str.length();i++) {
+		char c=str.charAt(i);
+			int index=str.indexOf(c,i+1);
+			if(index==-1)
+				newstr.append(c);
+	}
+	 System.out.println(newstr);
+	 //Remove the duplicate world as same occurance 
+	 String su="I love love india india";
+	 String temp[]=su.split(" ");
+	 LinkedHashSet<String> list=new LinkedHashSet<String>();
+	 for(int i=0;i<temp.length;i++) {
+		 list.add(temp[i]);
+	 }System.out.println(list);
+	//Remove the duplicate character as same occurance 
+		 String re="I AM AT AMSTERDAM";
+		 LinkedHashSet<Character> list1=new LinkedHashSet<Character>();
+		 for(int i=0;i<re.length();i++) {
+			 list1.add(re.charAt(i));
+		 }System.out.println(list1);
+}   
+}
+/*Output:
+ * I STERDAM
+[I, love, india]
+[I,  , A, M, T, S, E, R, D]
+
+*/
